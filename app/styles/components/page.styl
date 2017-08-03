@@ -1,0 +1,100 @@
+@css {
+  @import 'suitcss-utils-display';
+}
+
+.Page {
+  // display flex
+  height 100%
+  padding-top 52px
+  padding-bottom 110px
+  box-sizing border-box
+  transition padding 0.3s 0s
+  overflow-x auto
+
+  &--home {
+
+  }
+
+  &--favorite, &--songbook, &--playlist, &--history, &--youtube {
+    display flex
+  }
+
+  &.is-footer-hidden {
+    padding-bottom 0
+  }
+}
+
+.Page-content {
+  flex 1
+  height 100%
+  position relative
+  overflow hidden
+}
+
+.Page-main {
+  height 100%
+  padding 0 20px 30px 20px
+  box-sizing border-box
+
+  &-favorite {
+    padding 40px 20px 30px 20px
+  }
+}
+
+.Page-title {
+  display flex
+  align-items center
+  font-weight normal
+  color white
+  margin-top 10px
+  margin-left 0
+  margin-bottom 6px
+  position relative
+  justify-content space-between
+  overflow-x auto
+  overflow-x overlay
+  overflow-y hidden
+
+  &-left {
+    display inline
+    white-space nowrap
+    width 100%
+  }
+}
+
+.Page-total {
+  align-items center
+  font-size 16px
+  margin-bottom 8px
+  display inline
+  white-space nowrap
+
+  & > span {
+    flex-wrap nowrap
+  }
+}
+
+.Page-help {
+  opacity 0.6
+  background-color transparent
+  display flex
+  position absolute
+  top 5px
+  right 30px
+  border 0px
+  &:hover {
+    opacity 1
+  }
+
+  &--icon {
+    width 21px
+    height 21px
+    margin 3px 6px 0 0
+  }
+
+  & > span {
+    display inline-block
+    padding-top 5px
+    font-size 14px
+  }
+}

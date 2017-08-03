@@ -1,0 +1,141 @@
+$tree-hover-color = rgba(116,200,254,0.2);
+$tree-selected-color = rgba(116,200,254,0.7);
+$tree-font-size = 14px;
+$tree-line-height = 28px;
+
+$icon-width = 18px;
+$icon-height = 18px;
+$icon-block {
+  width $icon-width
+  height $icon-height
+  text-align center
+  line-height $tree-line-height
+}
+
+$f-no-select {
+  user-select none
+}
+
+.tree {
+  width 300px
+  overflow-x hidden
+  overflow-y auto
+  background-color inherit
+  color inherit
+  position relative
+}
+
+.m-tree {
+  position relative
+  overflow hidden
+  @extends $f-no-select
+}
+
+.m-node {
+  &.placeholder {
+    border 1px dashed #1385e5
+
+    & > * {
+      visibility hidden
+    }
+  }
+
+  .inner {
+    position relative
+    cursor pointer
+    padding-left $icon-width
+    font-size $tree-font-size
+    color inherit
+
+    &:hover {
+      background-color $tree-hover-color
+    }
+
+    &:active {
+      background-color $tree-selected-color
+    }
+
+// Defaults
+    /*font-family Menlo*/
+  }
+
+  .collapse {
+    position absolute
+    left 0
+    cursor pointer
+    @extends $icon-block
+  }
+
+  .node {
+    display inline-block
+    width 100%
+    padding 4px 5px
+
+    &:hover {
+      background-color $tree-hover-color
+    }
+
+    &:active,
+    &.is-active {
+      background-color $tree-selected-color
+    }
+  }
+
+// Defaults
+  /*.caret-right:before {
+    content '\25B8'
+  }
+
+  .caret-down:before {
+    content '\25BE'
+  }*/
+
+// Custom icon
+  .caret-right:before {
+    font-family 'qts'
+    @extends $ic_folder_close
+  }
+
+  .caret-down:before {
+    font-family 'qts'
+    @extends $ic_folder_open
+  }
+}
+
+// Custom icon :each folder
+.children > .m-node > .inner:before {
+  font-family 'qts'
+  @extends $ic_folder_close
+  position absolute
+  left 2px
+  line-height $tree-line-height
+  height $tree-line-height
+}
+
+// Custom icon :folder level one
+.m-tree > .m-node > .inner {
+  .caret-right:before,
+  .caret-down:before {
+    font-family 'qts'
+    @extends $ic_nas
+  }
+}
+
+// Custom icon :folder level two
+.m-tree > .m-node > .children > .m-node > .inner {
+  &:before {
+    content '' !important
+  }
+
+  .caret-right:before,
+  .caret-down:before {
+    font-family 'qts'
+    @extends $ic_hd
+  }
+}
+
+.m-draggable {
+  position absolute
+  opacity 0.8
+  @extends $f-no-select
+}

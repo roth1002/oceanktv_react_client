@@ -1,0 +1,36 @@
+@css {
+  @import 'suitcss-utils-display';
+}
+
+.Notification {
+	position fixed
+  left 40%
+  min-width 100px
+  max-width 300px
+  background-color black
+  width auto
+  height auto
+  z-index 4
+  top 0
+  text-align center
+  padding 2%
+  transform translateY(-120%)
+  transition-duration 0.5s
+
+  &.is-visible {
+    transform translateY(0)
+    & > .ic {
+      line-height 2
+    }
+  }
+
+  &-btn {
+    font-size 16px
+  }
+}
+
+.ic_message_control:before,
+.ic_message_songaction:before {
+  color #00afff
+  padding-right 12px
+}

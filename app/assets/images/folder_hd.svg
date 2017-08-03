@@ -1,0 +1,35 @@
+<svg id="_folder_hd.svg_folder_hd.png" data-name=" folder_hd.svg,  folder_hd.png" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="17" height="14.5" viewBox="0 0 17 14.5">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: none;
+        stroke: #000;
+        stroke-width: 1px;
+        filter: url(#filter);
+      }
+
+      .cls-1, .cls-2 {
+        fill-rule: evenodd;
+      }
+
+      .cls-2 {
+        filter: url(#filter-2);
+      }
+    </style>
+    <filter id="filter" x="498" y="254" width="16" height="7.344" filterUnits="userSpaceOnUse">
+      <feFlood result="flood" flood-color="#666"/>
+      <feComposite result="composite" operator="in" in2="SourceGraphic"/>
+      <feBlend result="blend" in2="SourceGraphic"/>
+    </filter>
+    <filter id="filter-2" x="498" y="261" width="16" height="7" filterUnits="userSpaceOnUse">
+      <feFlood result="flood" flood-color="#666"/>
+      <feComposite result="composite" operator="in" in2="SourceGraphic"/>
+      <feBlend result="blend" in2="SourceGraphic"/>
+    </filter>
+  </defs>
+  <g style="fill: none; filter: url(#filter)">
+    <path id="形狀_297" data-name="形狀 297" class="cls-1" d="M498,261l2.667-7h10.666L514,261" transform="translate(-497.5 -253.5)" style="stroke: inherit; filter: none; fill: inherit"/>
+  </g>
+  <use xlink:href="#形狀_297" style="stroke: #000; filter: none; fill: none"/>
+  <path id="矩形_93" data-name="矩形 93" class="cls-2" d="M506,263.8h1.333v1.4H506v-1.4Zm-2.667,0h1.334v1.4h-1.334v-1.4Zm-2.666,0H502v1.4h-1.333v-1.4Zm10.666,1.4h-2.666v-2.8h2.666v2.8ZM498,261h16v1.4H498V261Zm0,5.6h16V268H498v-1.4Zm0-4.2h1.333V268H498v-5.6Zm14.667-1.4H514v5.6h-1.333V261Z" transform="translate(-497.5 -253.5)"/>
+</svg>

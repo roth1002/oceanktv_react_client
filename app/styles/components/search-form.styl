@@ -1,0 +1,137 @@
+@css {
+  @import 'suitcss-utils-display';
+  @import 'react-select';
+}
+
+.SearchForm {
+  display flex
+  color #000
+}
+
+.SearchForm-input, .SearchForm-select, .SearchForm-submit {
+  display inline-block
+}
+
+.SearchForm-input {
+  width 500px
+  line-height 20px
+  border 1px solid #848484
+  padding-left 10px
+  border-radius 0
+
+  &:focus {
+    color: #000;
+    border-color: #000
+    outline -webkit-focus-ring-color auto 5px
+  }
+
+  &:disabled {
+     color:#aeaeae;
+     border-color: #aeaeae
+  }
+
+  &-tip {
+    position absolute
+    top 70px
+    left 45px
+    color #c1272d
+    font-size 12px
+    display none
+    &.is-visible {
+      display inline-block
+    }
+  }
+
+  &.is-invalid {
+    border 1px solid #c1272d
+  }
+}
+
+.SearchForm-select {
+  width 100px
+
+  & .Select-placeholder {
+    // for customize react-select css
+    text-shadow none
+  }
+}
+
+.SearchForm-submit {
+  display inline-block
+  min-width 80px
+  width 100px
+  outline none
+  color #2f2f2f
+  background-color #bfbfbf
+  border 1px solid #b5b5b5
+  &:hover {
+    background-color #ccc
+    border 1px solid #bdbdbd
+  }
+  &:active {
+    background-color #b5b5b5
+  }
+
+  &--header {
+    background-color transparent
+  }
+}
+
+.Select-control {
+  border-radius 0
+  border-top 1px solid #848484
+  border-bottom 1px solid #848484
+  border-right 1px solid #848484
+
+  &--header {
+    & > .Select-control {
+      width 80px
+    }
+  }
+}
+
+.SearchResult {
+  height calc(100% - 36px)
+
+  // for customize react-select css
+  text-shadow none
+}
+
+.SearchResult-head {
+  display flex
+  justify-content space-between
+  align-items center
+  color #2f2f2f
+
+  & > h2 {
+    display flex
+    align-items center
+    font-size 26px
+    font-weight normal
+    margin-top 24px
+    margin-bottom 10px
+  }
+}
+
+.SearchResult-body {
+  height calc(100% - 72px)
+}
+
+.SearchResult-back {
+  background-color transparent
+  color #7e7e7e
+  font-size 12px
+  width 30px
+  height 30px
+  padding 5px
+  border-radius 50%
+  border 1px solid #7e7e7e
+  margin-right 10px
+  box-sizing border-box
+  outline none
+
+  &:hover {
+    color rgba(0,0,0,.1)
+    background rgba(0,0,0,.1)
+  }
+}

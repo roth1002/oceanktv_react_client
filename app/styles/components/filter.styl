@@ -1,0 +1,200 @@
+@css {
+  @import 'suitcss-utils-display';
+}
+
+$Filter-ic-normal {
+  border 0
+  font-size 20px
+  padding 4px 10px
+  margin 0
+  &:hover {
+    background transparent
+  }
+  &.is-active {
+    color #00ffff
+  }
+}
+
+$Filter-divider-normal {
+  display inline-flex
+  align-self flex-end
+  background-color #fff
+  width 1px
+  &.is-disable {
+    color #565656
+    background-color #565656
+    opacity 0.5
+  }
+}
+
+$Filter-Dropmenu-normal {
+  position fixed
+  display none
+  width 140px
+  float right
+  top 92px
+  background #f8f5fa
+  border 1px solid #b0b0b0
+  z-index 9999
+  color #000000
+  font-size 14px
+
+  &.is-visible {
+    display block
+  }
+
+  & > ul {
+    padding 0
+  }
+}
+
+$Filter-btn-normal-color {
+  color #fff
+  background transparent
+  border-color #fff
+  outline none
+}
+
+$Filter-btn-hover-color {
+  color #00ffff
+  border-color #00ffff
+}
+
+
+.Filter {
+  display flex
+  justify-content space-between
+  align-items center
+  background-color #434343
+  height 40px
+  // padding 0 20px
+  position absolute
+  top 0
+  left 0
+  right 0
+}
+
+.Filter-left {
+  height 100%
+  display flex
+  align-items center
+  margin-left 5px
+}
+
+.Filter-divider {
+  @extends $Filter-divider-normal
+  height 15px
+}
+
+.Filter-ic-divider {
+  @extends $Filter-divider-normal
+  height 25px
+}
+
+.Filter-btn {
+  display inline-block
+  font-size 0.5em
+  padding 4px 20px
+  margin 0 10px
+  border 1px solid white
+  border-radius 20px
+  vertical-align super
+  @extends $Filter-btn-normal-color
+
+  &:hover {
+    @extends $Filter-btn-hover-color
+  }
+
+  &:disabled {
+    opacity 0.5
+    &:hover {
+      @extends $Filter-btn-normal-color
+    }
+  }
+
+  &.ic_action_favorite,
+  &.ic_action_requesting_custom,
+  &.ic_action_inserting_custom,
+  &.ic_action_remove,
+  {
+    @extends $Filter-ic-normal
+    // &:hover:after{
+    //   color: #2f2f2f;
+    //   content: attr(title);
+    //   font-size 12px;
+    //   top 32px;
+    //   position absolute
+    //   padding 11px 20px
+    //   margin-left -20px
+    //   background-image linear-gradient(to bottom, #fefefe, #e5e4f2)
+    // }
+  }
+
+
+
+  &.ic_toolbar_multiselect_off,
+  {
+    @extends $Filter-ic-normal
+    margin 0
+    padding 0 5px 0 8px
+    border-radius 0
+    &:hover {
+      background #393939
+    }
+  }
+
+  // &.ic_topbar_triangle_normal,
+  // {
+  //   @extends $Filter-ic-normal
+  //   padding 0 8px 0 3px
+  // }
+
+  &.ic_toolbar_shuffle:before, &.ic_action_requesting:before {
+    margin-right 4px
+  }
+
+  & > span {
+    font-family $font-family
+  }
+}
+
+.Filter-dropdown {
+  background-color transparent
+  border none
+  padding 0 8px 0 3px
+
+  &:disabled {
+    opacity 0.5
+  }
+
+  &:hover {
+    background-color #313131
+  }
+}
+
+.Filter-Dropmenu {
+  @extends $Filter-Dropmenu-normal
+  left 330px
+}
+
+.Filter-Dropmenu-History {
+  @extends $Filter-Dropmenu-normal
+  left 100px
+}
+
+.Filter-Dropmenu-content{
+  margin 0
+  padding 0
+  list-style-type none
+
+  &-btn {
+    cursor pointer
+    color #2f2f2f
+    text-decoration none
+    padding 4px 20px
+    &:hover{
+      display block
+      background #defefd
+    }
+  }
+}

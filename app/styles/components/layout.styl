@@ -1,0 +1,392 @@
+@css {
+  @import 'suitcss-utils-display';
+}
+
+$Centered-background {
+  background-position center
+  background-repeat no-repeat
+}
+
+$Centered-flex {
+  display flex
+  justify-content center
+  align-items center
+}
+
+$imageUrl = '../assets/images/';
+
+$Songbook-navs-bg(fileName) {
+  height 100%
+  width 50%
+
+  & > i {
+    position absolute
+    display block
+    width 224px
+    margin-left -28px
+    height inherit
+    background-image url($imageUrl + fileName)
+    background-size cover
+    background-repeat no-repeat
+    background-position center
+  }
+}
+
+#root {
+
+}
+
+.App {
+  @extend $Centered-background
+  background-size cover
+  width 100vw
+  height 100vh
+  position relative
+  overflow hidden
+}
+
+.App-blocking {
+  @extend $Centered-flex
+  flex-direction column
+  background-color alpha(#000, 0.75)
+  font-size 18px
+  position fixed 0
+  z-index 100
+}
+
+.Queue, .Favorite, .History, .Songbook, .Youtube {
+  height calc(100% - 75px)
+  position relative
+  color #fff
+
+  &--byfolder {
+    height calc(100% - 75px)
+  }
+
+  &--w620 {
+    // width 620px
+    margin auto
+
+    @media screen and (min-width: 1366px) {
+      width auto
+      // margin 0 85px
+    }
+  }
+
+  &--w60 {
+    // width 60%
+    margin auto
+  }
+
+  & > h1 {
+    font-weight normal
+
+    & > .ic {
+      margin-right 8px
+    }
+  }
+}
+
+.Queue-more, .History-more, .Favorite-more {
+  display block
+  text-align right
+  width 100%
+  padding 10px
+  box-sizing border-box
+}
+
+.Favorite-head, .Songbook-head, .Queue-head, .History-head {
+  color #8f8f8f
+  display flex
+  padding 10px 40px
+
+  & > * {
+    flex 1
+    padding 0
+  }
+
+  & > .ic {
+    flex 0
+    font-size 1.5em
+    padding-right 24px
+  }
+
+  &-artists {
+    margin-left 98px
+  }
+
+  &-history-artist {
+    margin-left 98px
+  }
+
+  &--folder-multimode {
+    color #8f8f8f
+    display flex
+    padding 10px 40px
+    align-items center
+  }
+}
+
+.Folder-head {
+  background-color #7f8899
+  height 32px
+
+  & > span {
+    color #fff
+  }
+}
+
+.Favorite-body, .Songbook-body, .Queue-body, .History-body {
+  height calc(100%)
+}
+
+.Queue--current .Queue-body {
+  color #0ff
+}
+
+.Songbook-navs {
+  // background-color alpha(#000, 0.3)
+  width 332px
+  padding 8px
+}
+
+.Songbook-link {
+  display flex
+  background-size cover
+  @extend $Centered-background
+  width 100%
+  height 160px
+  margin-bottom 5px
+  position relative
+  background-image url($imageUrl + 'hp_songsbook_bg_normal.png')
+
+  &:last-child {
+    margin-bottom 0
+  }
+
+  &:hover {
+    // background alpha(#1a748e, 0.8)
+    background-image url($imageUrl + 'hp_songsbook_bg_hover.png')
+  }
+
+  & > h2 {
+    width 50%
+    height 100%
+    @extends $Centered-flex
+    display: inline-block;
+    margin: 20% auto;
+    text-align: center;
+
+    & > span {
+      font-size 1.4em
+      font-weight normal
+      text-shadow 1px 1px 0 alpha(#000, 0.85)
+    }
+  }
+
+
+
+  &--bgImage-01 {
+    $Songbook-navs-bg('by_folder.png')
+  }
+
+  &--bgImage-02 {
+    $Songbook-navs-bg('by_singer.png')
+  }
+
+  &--bgImage-03 {
+    $Songbook-navs-bg('by_language.png')
+  }
+
+  &--bgImage-youtube-hot {
+    $Songbook-navs-bg('img_youtube_hot.png')
+    & > i {
+      background-size 9vw
+    }
+  }
+
+  &--bgImage-youtube-cloudlink {
+    $Songbook-navs-bg('img_youtube_cloudlink.png')
+    & > i {
+      background-size 9vw
+    }
+  }
+}
+
+.Songbook-goback {
+  display inline-block
+  color #fff
+  font-size 16px
+  padding 6px
+  margin-right 15px
+  border 1px solid #fff
+  border-radius 24px
+  vertical-align super
+
+  &:hover {
+    color #bababa
+    border-color #bababa
+  }
+
+  &:active {
+    color #6d6d6d
+    border-color #6d6d6d
+  }
+
+  &-header {
+    margin-left 50px
+  }
+}
+
+.Example {
+  display flex
+  margin 20px 0
+
+  & > div > span {
+    display block
+    background-color #959788
+    color #fff
+    text-align center
+    padding 0 10px
+  }
+
+  & > ul > li {
+    color #959788
+    line-height 28px
+
+    & > span {
+      color #2e2e2e
+    }
+  }
+
+  & > * {
+    margin 0
+  }
+}
+
+.Doc {
+
+}
+
+.Doc-title {
+  background-color #808898
+  color #fff
+  text-align center
+  padding 2px
+}
+
+.Songname-multimode,
+.Date-multimode {
+  flex 1
+}
+
+.Artistsname-multimode {
+  flex 1
+  margin-left 65px
+}
+
+.HomePage-head-youtube {
+  padding-left 10px
+  margin-bottom 3px
+
+  &:hover {
+    opacity 0.6
+  }
+}
+
+.HomePage-tip-youtube {
+  background linear-gradient(#fefefe, #e5e4f2)
+  border 1px solid #767676
+  color #2f2f2f
+  text-shadow none
+  position absolute
+  z-index 5
+  padding 16px 12px
+  top 0
+  left 195px
+  visibility hidden
+  width 276px
+  max-width 300px
+  font-size 12px
+  &.is-show {
+    visibility visible
+  }
+}
+
+.loader {
+  margin auto
+  font-size 10px
+  position absolute 0
+  text-indent -9999em
+  border-top 1.1em solid rgba(255, 255, 255, 0.2)
+  border-right 1.1em solid rgba(255, 255, 255, 0.2)
+  border-bottom 1.1em solid rgba(255, 255, 255, 0.2)
+  border-left 1.1em solid #ffffff
+  -webkit-transform translateZ(0)
+  -ms-transform translateZ(0)
+  transform translateZ(0)
+  -webkit-animation load8 1.1s infinite linear
+  animation load8 1.1s infinite linear
+}
+.loader,
+.loader:after {
+  border-radius 50%
+  width 10em
+  height 10em
+}
+@-webkit-keyframes load8 {
+  0% {
+    -webkit-transform rotate(0deg)
+    transform rotate(0deg)
+  }
+  100% {
+    -webkit-transform rotate(360deg)
+    transform rotate(360deg)
+  }
+}
+@keyframes load8 {
+  0% {
+    -webkit-transform rotate(0deg)
+    transform rotate(0deg)
+  }
+  100% {
+    -webkit-transform rotate(360deg)
+    transform rotate(360deg)
+  }
+}
+
+.ic_new {
+
+  position absolute
+  font-size 0.4em
+  margin 0.8em 0px 0px 12px
+  padding 0.2em 0.4em
+  box-shadow rgba(0, 0, 0, 0.6) 0px 0px 10px
+  border-radius 2em
+  -moz-animation flash 1s ease-out
+  -moz-animation-iteration-count infinite
+
+  -webkit-animation flash 1s ease-out
+  -webkit-animation-iteration-count infinite
+
+  -ms-animation flash 1s ease-out
+  -ms-animation-iteration-count infinite
+}
+
+@-webkit-keyframes flash {
+    0% { background-color: #ff6633; }
+    50% { background-color: yellow; }
+    100% { background-color: #ff6633; }
+}
+
+@-moz-keyframes flash {
+    0% { background-color: #ff6633; }
+    50% { background-color: yellow; }
+    100% { background-color: #ff6633; }
+}
+
+@-ms-keyframes flash {
+    0% { background-color: #ff6633; }
+    50% { background-color: yellow; }
+    100% { background-color: #ff6633; }
+}

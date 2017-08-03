@@ -1,0 +1,178 @@
+@css {
+  @import 'suitcss-utils-display';
+}
+
+.SlidePanel {
+  width 100%
+  height 100%
+  position absolute
+  top 0
+  left 0
+  visibility hidden
+  transition visibility 0s .6s
+
+  &:after {
+    /* Overlay layer */
+    content ""
+    background-color rgba(#000, 0)
+    width 100%
+    height 100%
+    position absolute
+    top 0
+    left 0
+    box-sizing border-box
+    transition background .3s 0s
+  }
+
+  &.is-visible {
+    visibility visible
+    transition visibility 0s 0s
+
+    &:after {
+      background-color rgba(#000, 0.6)
+      transition background .3s 0s
+    }
+  }
+}
+
+
+.SlideContainer {
+  height calc(100% - 122px)
+  background-color #f1f1f1
+  border-top 1px solid #ddd
+  border-bottom 1px solid #ddd
+  margin-top 52px
+  margin-bottom 110px
+  box-sizing border-box
+  position absolute
+  top 0
+  right 0
+  z-index 1
+  transform translateX(100%)
+  transition-duration .3s
+
+  .is-visible & {
+    transform translateX(0)
+    transition-delay 0s
+  }
+
+  .is-footer-hidden & {
+    height calc(100% - 52px)
+    margin-bottom 0
+  }
+
+  .is-header-hidden & {
+    height calc(100%)
+    margin-top 0
+  }
+
+  &.isInit {
+    height 100px
+  }
+
+  &.isTriggeredByModal {
+    z-index 5
+    margin-top 0
+    height 100vh
+  }
+}
+
+.SlideContent {
+  color #2e2e2e
+  height 100%
+  padding-bottom 15px
+  position relative
+  box-sizing border-box
+  overflow hidden
+
+  // for customize react-select css
+  text-shadow none
+
+  &--search {
+    background-color #e9e9ea
+    width 906px
+    padding 30px 45px 40px
+    overflow visible
+  }
+
+  & > button {
+    display inline-block
+    padding 0
+  }
+}
+
+.SlideContent-head {
+  display flex
+  align-items center
+  color #918c80
+  height 55px
+  padding 15px 30px
+  position absolute 0 0 initial 0
+
+  & > h1 {
+    font-weight normal
+    margin 0 0 0 12px
+  }
+}
+
+.SlideContent-body {
+  height calc(100% - 70px)
+  padding 0 30px
+  margin-top 70px
+  overflow-y auto
+
+  & > h3 {
+    margin-top 15px
+    margin-bottom 10px
+  }
+
+  & > hr {
+    margin-top 10px
+    margin-bottom 15px
+  }
+}
+
+.SlideContent-close {
+  display flex
+  justify-content center
+  background-color #aaa
+  color #fff
+  font-size 7px
+  width 20px
+  height 20px
+  border none
+  border-radius 50%
+  outline none
+  position absolute
+  top 10px
+  right 10px
+  transition background-color 0.5s
+
+  &:hover {
+    background-color lighten(#aaa, 30%)
+  }
+}
+
+.SlideContent-intro {
+  & > * {
+    margin-bottom 28px
+  }
+}
+
+.no-link {
+  color #0071ba
+  text-decoration underline
+  transition color 0.3s
+
+  &:hover {
+    color #015def
+  }
+
+  &:active {
+    color #7eaefe
+  }
+
+  &:visited {
+    color #753f94
+  }
+}

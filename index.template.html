@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="google" content="notranslate" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title><%= htmlWebpackPlugin.options.title || 'Document' %></title>
+
+  </head>
+  <body>
+    <div id="root"></div>
+    <script src="<%= (webpackConfig.output.publicPath + 'scripts/jwplayer.js') %>" charset="utf-8"></script>
+    <script type="text/javascript">
+      jwplayer.key = 'a2/jCdmgu3Pr3iuEwFbHAIdRk/7eNl1lEeoRuA==';
+    </script>
+  </body>
+</html>

@@ -1,0 +1,315 @@
+@css {
+  @import 'suitcss-utils-display';
+}
+
+$Images-url = '../assets/images/'
+
+$Set-background-image(fileName)
+  background-image url($Images-url + fileName)
+
+
+$ListItem {
+  background-color alpha(#000, 0.3)
+  margin 2px 0
+
+  &:hover {
+    background-color rgba(0,0,0, 0.5)
+
+    & > .ActionPanel {
+      opacity 1
+      visibility visible
+    }
+  }
+
+  &:active {
+    background-color rgba(0,0,0, 0.8)
+  }
+}
+
+$Song-normal {
+  height 50px
+  position relative
+  transition height 0.3s 0s
+  overflow hidden
+  display block
+
+  &:hover {
+    // background-color #1e3c48
+    background-color rgba(0,0,0, 0.5)
+  }
+
+  &.is-selected > .Song-info {
+    // background-color #1d697f
+    background-color rgba(0,0,0, 0.8)
+  }
+
+  &.is-expanded {
+    // height 130px
+  }
+
+  &.is-inQueue {
+    color #00ffff
+  }
+
+  &--search {
+    background-color alpha(#bfbfbf, 0.5)
+    color #2f2f2f
+
+    &:hover {
+      background-color alpha(#2ca2c6, 0.15)
+    }
+
+    &.is-selected {
+      background-color alpha(#2ca2c6, 0.4)
+    }
+
+    &.is-inQueue {
+      color #006cd0
+    }
+  }
+
+  &--queue .Song-artist {
+    color #a4dbea
+    text-align right
+  }
+
+  &--history .Song-time, &--history .Song-artist {
+    color #a4dbea
+
+  }
+
+}
+
+.Song {
+  @extend $ListItem
+  @extend $Song-normal
+}
+
+.Song-multi {
+  @extend $Song-normal
+  background-color alpha(#000, 0.3)
+  margin 2px 0
+
+  &:hover {
+    background-color alpha(#1a748e, 0.3)
+  }
+}
+
+.Song-source {
+  color #fff
+  font-size 24px
+  margin 0 15px
+}
+
+.Song-info {
+  display flex
+  align-items center
+  width 100%
+  height 100%
+  padding 10px 25px
+  box-sizing border-box
+  position relative
+
+  & > span {
+    flex 1
+  }
+
+  & > .ic {
+    flex 0
+    font-size 14px
+    position absolute
+    left 15px
+    top 18px
+    align-items center
+  }
+
+  &--home {
+    padding 10px 8px
+  }
+
+  &--queue {
+    padding-left 10px
+  }
+
+  &-checkbox {
+    margin-left 20px
+
+    &.is-hidden {
+      visibility hidden
+    }
+  }
+
+  &-checkbox-folder-multimode {
+    margin-left: 5px;
+    margin-right: 15px;
+  }
+}
+
+.Song-title {
+  padding-left 15px
+  white-space nowrap
+  text-overflow ellipsis
+  overflow hidden
+  display inline-block
+}
+
+
+.Song-artist {
+  white-space nowrap
+  text-overflow ellipsis
+  overflow hidden
+  display inline-block
+  &.is-multimode {
+    margin-left -34px
+  }
+}
+
+.Song-time {
+  white-space nowrap
+  text-overflow ellipsis
+  overflow hidden
+  display inline-block
+}
+
+.Song-thumbnail {
+  height 46px
+  width 82px
+  background-size 82px 46px
+  background-color transparent
+  margin-left 15px
+
+  &--home {
+    margin 0
+  }
+}
+
+.Artist {
+  @extend $ListItem
+  height 40px
+  padding 10px 27px
+  margin-left 2px
+  margin-right 2px
+  box-sizing border-box
+
+  &--empty {
+    height 0
+    padding 0 10px
+  }
+
+  &--search {
+    background-color alpha(#bfbfbf, 0.5)
+    color #2f2f2f
+
+    &:hover {
+      background-color alpha(#2ca2c6, 0.15)
+    }
+
+    &.is-selected {
+      background-color alpha(#2ca2c6, 0.4)
+    }
+  }
+}
+
+.Stroke {
+  @extend $ListItem
+  display block
+  padding 10px 27px
+}
+
+.Favorites {
+  @extend $ListItem
+  display flex
+  align-items center
+  background-position center
+  background-size cover
+  width 100%
+  height 50px
+  padding 0 5px
+  margin 1.5px
+  box-sizing border-box
+
+  &:hover {
+    // background-color alpha(#74c8fe, 0.2)
+    background-color rgba(0,0,0,0.5)
+
+    & > .Favorites-icon {
+      $Set-background-image("img_favorite_focus.png")
+    }
+
+    & > .Youtube-icon {
+      $Set-background-image("youtube_folder_hover.png")
+    }
+  }
+
+  &:active {
+    background-color rgba(0,0,0,0.8)
+  }
+
+  &--modal {
+    display block
+    background-color #f4f4f4
+    color #000
+    line-height 32px
+    width auto
+    height auto
+    padding 0 10px
+    margin 0
+    cursor pointer
+    text-overflow ellipsis
+    overflow hidden
+
+    &:nth-child(odd) {
+      background-color #fff
+    }
+
+    &:hover {
+      background-color alpha(#74c8fe, 0.2)
+    }
+
+    &.is-selected {
+      background-color alpha(#74c8fe, 0.7)
+    }
+  }
+
+  & > span {
+    display inline-block
+  }
+}
+
+.Favorites-icon {
+  flex 0 1 50px
+  $Set-background-image("img_favorite_normal.png")
+  height 100%
+  background-size cover
+  background-position center
+}
+
+.Favorites-name {
+  flex 1 0 70%
+  overflow hidden
+  text-overflow ellipsis
+  white-space nowrap
+}
+
+.Favorites-count {
+  flex 1 0 20%
+  color #a4dbea
+  text-align right
+}
+
+.Favorites-more {
+  display block
+  text-align right
+}
+
+.Youtube-icon {
+  flex 0 1 50px
+  $Set-background-image("youtube_folder_normal.png")
+  height 100%
+  background-size cover
+  background-position center
+
+  &--actionpanel {
+    $Set-background-image("youtube_folder_normal.png")
+  }
+}

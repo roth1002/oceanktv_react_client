@@ -1,0 +1,85 @@
+<?xml version="1.0" standalone="no"?>
+
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" 
+"http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="21" height="21">
+   <style type="text/css">
+   	.st0{fill-rule:evenodd;clip-rule:evenodd;fill:#FFFFFF;}
+   	.st1{fill-rule:evenodd;clip-rule:evenodd;fill:#A1A3A1;}
+   </style>
+   <svg y="0" x="0" >
+      <g>
+         <path class="st0" d="M0,0h5v5H0V0z">
+            <animate attributeName="class" attributeType="XML" 
+                  begin="0;"
+                  dur="1.5s" 
+                  values="st1;st0;st0;st0;st0;st0;st0;st0;"
+                  repeatDur="indefinite"
+                  calcMode="discrete" />
+         </path>
+         <path class="st0" d="M7,0h5v5H7V0z">
+            <animate attributeName="class" attributeType="XML" 
+                  begin="0;"
+                  dur="1.5s" 
+                  values="st0;st1;st0;st0;st0;st0;st0;st0;"
+                  repeatDur="indefinite"
+                  calcMode="discrete" />
+         </path>
+         <path class="st0" d="M14,0h5v5h-5V0z">
+            <animate attributeName="class" attributeType="XML" 
+                  begin="0;"
+                  dur="1.5s" 
+                  values="st0;st0;st1;st0;st0;st0;st0;st0;"
+                  repeatDur="indefinite"
+                  calcMode="discrete" />
+         </path>
+         <path class="st0" d="M14,7 h5 v5 h-5 V0 z">
+            <animate attributeName="class" attributeType="XML" 
+                  begin="0;"
+                  dur="1.5s" 
+                  values="st0;st0;st0;st1;st0;st0;st0;st0;"
+                  repeatDur="indefinite"
+                  calcMode="discrete" />
+         </path>
+         <path class="st0" d="M14,14
+                              h4
+                              l3,3
+                              v4
+                              h-4
+                              l-3,-3
+                              v-4
+                              z">
+            <animate attributeName="class" attributeType="XML" 
+                  begin="0;"
+                  dur="1.5s" 
+                  values="st0;st0;st0;st0;st1;st0;st0;st0;"
+                  repeatDur="indefinite"
+                  calcMode="discrete" />
+         </path>
+         <path class="st0" d="M7,14h5v5H7V0z">
+            <animate attributeName="class" attributeType="XML" 
+                  begin="0;"
+                  dur="1.5s" 
+                  values="st0;st0;st0;st0;st0;st1;st0;st0;"
+                  repeatDur="indefinite"
+                  calcMode="discrete" />
+         </path>
+         <path class="st0" d="M0,14h5v5H0V0z">
+            <animate attributeName="class" attributeType="XML" 
+                  begin="0;"
+                  dur="1.5s" 
+                  values="st0;st0;st0;st0;st0;st0;st1;st0;"
+                  repeatDur="indefinite"
+                  calcMode="discrete" />
+         </path>
+         <path class="st0" d="M0,7.2h5v5H0V0z">
+            <animate attributeName="class" attributeType="XML" 
+                  begin="0;"
+                  dur="1.5s" 
+                  values="st0;st0;st0;st0;st0;st0;st0;st1;"
+                  repeatDur="indefinite"
+                  calcMode="discrete" />
+         </path>
+      </g>
+   </svg>
+</svg>

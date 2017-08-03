@@ -1,0 +1,174 @@
+@css {
+  @import 'suitcss-utils-display';
+}
+
+$Logo-color = #0156a9, #1abadc
+$Images-url = '../assets/images/'
+
+$Set-content(fileName)
+  content url($Images-url + fileName)
+
+$Set-background-image(fileName)
+  background-image url($Images-url + fileName)
+
+
+.Header {
+  background-color $color
+  color #000
+  width 100%
+  height 44px
+  padding 0 0 0 34px
+  margin-top 8px
+  box-sizing border-box
+  position fixed
+  top 0
+  left 0
+  z-index 2
+  display flex
+
+  &:before {
+    content ""
+    background-image linear-gradient(to right, $Logo-color)
+    height 8px
+    position absolute
+    top -8px
+    left 0
+    right 0
+  }
+}
+
+.Header-left {
+  float left
+  display flex
+  flex 1
+  &--youtube-search-form {
+    width 30vw
+    height 36px
+    padding 5px 0 0 5px
+    text-shadow none
+  }
+}
+
+.Header-right {
+  display flex
+  height 100%
+  float right
+}
+
+.Header-logo {
+  display block
+  &.en, .en-us {
+    &:before {
+      $Set-content("logo_web_en.png")
+      padding-right 10px
+    }
+  }
+  &.zh-tw, .zh-cn {
+    &:before {
+      $Set-content("logo_web_chs.png")
+      padding-right 10px
+    }
+  }
+  &--youtube {
+    $Set-content("logo_youtube.png")
+    width 96px
+    height 34px
+    padding 5px 0 0 3vw
+  }
+}
+
+.Header-group {
+  height 100%
+  margin 0 18px 0
+  display flex
+
+  & > .Header-btn {
+    height 100%
+    box-sizing border-box
+  }
+}
+
+.Header-btn {
+  background-color transparent
+  color #4b4b4b
+  border none
+  border-bottom 2px solid transparent
+  box-sizing content-box
+  outline none
+  padding 0 7px
+
+  &:hover {
+    color #2f2f2f
+  }
+
+  &.is-active {
+    color #000
+    border-bottom 2px solid #2f2f2f
+  }
+
+  &.is-disable {
+    color #b4b4b4
+  }
+}
+
+.Header-divider {
+  align-self flex-end
+  background-color #000
+  height 15px
+  width 1px
+}
+
+.Header-btn--control {
+  background-position center
+  background-size 33px
+  background-repeat no-repeat
+  $Set-background-image("btn_topbar_control_off.png")
+  width 33px
+  margin 0 18px
+
+  &:hover {
+    opacity 0.5
+  }
+
+  &.is-on {
+    $Set-background-image("btn_topbar_control_on.png")
+  }
+}
+
+.Header-btn--more {
+  margin 0 18px
+}
+
+.Header-btn--golanding {
+  display block
+  align-self center
+  height 18px
+  margin -15px 25px 3px 25px
+  border-radius 100px
+  color #fff
+  font-size 15px
+  padding 0.44em
+  &:hover {
+    opacity 0.5
+  }
+}
+
+.Header-User-Panel{
+  position fixed
+  display none
+  float right
+  right 0
+  top 52px
+  background #f8f5fa
+  border 1px solid #b0b0b0
+  z-index 9999
+  color #000000
+  width 208px
+  button{
+    line-height 40px
+    padding-left 40px
+  }
+  &.is-visible {
+    display block
+  }
+}

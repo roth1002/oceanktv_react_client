@@ -1,0 +1,86 @@
+
+$Dot-borderColor = #00b7ee;
+
+$Slider-btn {
+  display flex
+  justify-content center
+  align-items center
+  color alpha(#fff, 0.3)
+  font-size 2em
+  text-shadow 2px 2px 3px alpha(#000, 0.6)
+  width 50px
+  position absolute
+  z-index 1
+
+  &:hover {
+    color #fff
+  }
+
+  &:active {
+    color #fff
+  }
+}
+
+.Slider {
+  width 100%
+  height 100%
+  position relative
+}
+
+.Slider-previousBtn {
+  @extends $Slider-btn
+  top 0
+  bottom 0
+  left 0
+}
+
+.Slider-nextBtn {
+  @extends $Slider-btn
+  top 0
+  right 0
+  bottom 0
+}
+
+.Slider-dots {
+  display flex
+  justify-content center
+  position absolute
+  right 0
+  bottom 0
+  left 0
+}
+
+.Slider-dot {
+  width 10px
+  height 10px
+  border 1px solid $Dot-borderColor
+  border-radius 50%
+  margin 10px
+  transition background-color 0.3s
+
+  &.is-current {
+    background-color $Dot-borderColor
+  }
+}
+
+.Slider-list {
+  display flex
+  justify-content center
+  height 100%
+  & > * {
+    width 585px
+    margin 25px 45px
+  }
+
+  & > .Favorite {
+    width 472px
+  }
+
+  & > .Songbook {
+    width 332px
+  }
+
+  & > .Youtube {
+    width 378px
+  }
+}

@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="14" height="14" viewBox="0 0 14 14">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #bfbfbf;
+        fill-rule: evenodd;
+        filter: url(#filter);
+      }
+    </style>
+    <filter id="filter" x="479" y="227" width="14" height="14" filterUnits="userSpaceOnUse">
+      <feFlood result="flood" flood-color="#666"/>
+      <feComposite result="composite" operator="in" in2="SourceGraphic"/>
+      <feBlend result="blend" in2="SourceGraphic"/>
+    </filter>
+  </defs>
+  <path id="folder_nas.svg_folder_nas.png" data-name="folder_nas.svg, folder_nas.png" class="cls-1" d="M479,231.211h2.789V241H479v-9.789Zm4.211,0H493V241h-9.789v-9.789Zm4.184,1.394h1.394v7H487.4v-7Zm2.816,0h1.394v7h-1.394v-7Zm-5.606,0H486v7h-1.395v-7ZM479,227h14v2.789H479V227Z" transform="translate(-479 -227)"/>
+</svg>

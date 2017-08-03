@@ -1,0 +1,52 @@
+@require '../base/vars';
+
+$bgImage-A = url('../assets/images/bg_01.png')
+$bgImage-B = url('../assets/images/bg_02.png')
+$bgImage-C = url('../assets/images/bg_03.png')
+$bgImage-D = url('../assets/images/bg_04.png')
+$bgImage-E = url('../assets/images/bg_05.png')
+
+.u-theme--default {
+  background-image $background-image
+}
+
+.u-theme {
+
+  &--A {
+    background-image $bgImage-A
+  }
+
+  &--B {
+    background-image $bgImage-B
+  }
+
+  &--C {
+    background-image $bgImage-C
+  }
+
+  &--D {
+    background-image $bgImage-D
+  }
+
+  &--E {
+    background-image $bgImage-E
+  }
+}
+
+.u-theme-thumb {
+  display inline-flex
+  flex-direction column
+  text-align center
+
+  & > input[type="radio"] {
+    display none
+
+    &:checked + img {
+      box-shadow 0 0 5px 2px alpha(#0ff, 0.75)
+    }
+
+    &:checked ~ span {
+      text-shadow 0 0 1px alpha(#0ff, 0.75)
+    }
+  }
+}

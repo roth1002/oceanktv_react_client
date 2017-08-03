@@ -1,0 +1,189 @@
+@css {
+  @import "suitcss-utils-display";
+}
+
+$Footer-bgColor = #001732;
+
+$Footer-btn-normal {
+  color white
+  display flex
+  flex-direction column
+  justify-content center
+  align-items center
+  width 110px
+  height 100%
+  position relative
+  transition background-color 0.3s
+  text-align center
+
+  & > span {
+    display inline-block
+    margin-bottom 5px
+    font-size 18px
+  }
+
+  &--pitch {
+    margin-bottom 10px
+  }
+
+  &--stop {
+    // background-color #00ffc0
+    // color #05264F
+    border 1px solid #fff
+    border-radius 50px
+    font-size 20px
+    padding 5px
+    &-context {
+      // color #00ffc0
+    }
+  }
+}
+
+$Footer-icon-base {
+    margin 0 5px 5px 5px
+    border 2px solid #fff
+    border-radius 50%
+    cursor pointer
+    &:hover {
+      background-color #04264f
+      color #0ff
+      border-color #0ff
+    }
+}
+
+.Footer {
+  display flex
+  justify-content space-around
+  background-color $Footer-bgColor
+  width 100%
+  height 110px
+  position fixed
+  left 0
+  bottom 0
+  right 0
+  z-index 2
+  transform translateY(100%)
+  transition-duration 0.3s
+  text-shadow none
+
+  &.is-visible {
+    transform translateY(0)
+  }
+}
+
+.Footer-btn {
+  @extends $Footer-btn-normal
+  cursor pointer
+
+  & > .ic {
+    font-size 30px
+  }
+
+  & > .btn-name {
+    width 100%
+    word-break break-word
+  }
+
+  &.is-mute, &.is-guide {
+    color #0ff
+    font-weight bold
+  }
+
+  &:hover, &.is-active {
+    background-color #04264f
+  }
+}
+
+.Footer-btn-withPanel {
+  @extends $Footer-btn-normal
+  width 146px
+  & > .ic {
+    font-size 30px
+  }
+
+}
+
+.Footer-btn-withStop {
+  @extends $Footer-btn-normal
+  & > .ic {
+    font-size 20px
+  }
+
+}
+
+.Footer-panel {
+  display none
+  justify-content center
+  align-items center
+  background-color #0b4489
+  padding 15px calc(32px - 8.5px)
+  position absolute
+  top 0
+  left 50%
+  box-shadow 0 6px 12px alpha(#000, 0.8)
+  transform translate(-50%, -110%)
+
+  &:after {
+    content ""
+    border-top 8px solid #0b4489
+    border-left 8px solid transparent
+    border-right 8px solid transparent
+    position absolute
+    left 50%
+    bottom 0
+    transform translate(-50%, 100%)
+  }
+
+  &.is-visible {
+    display flex
+  }
+
+  & > button {
+    display inline-block
+    background-color transparent
+    font-size 32px
+    min-width 40px // for ie 11
+    width 40px
+    height 40px
+    padding 0
+    border 1px solid #fff
+    border-radius 50%
+    margin 0 calc(17px / 2)
+    transition-duration 0.3s
+    outline none
+
+    &:hover {
+      background-color alpha(#000, 0.3)
+      color alpha(#fff, 0.3)
+      border-color alpha(#fff, 0.3)
+    }
+
+    &.is-active, &:active {
+      color #0ff
+      border-color #0ff
+    }
+  }
+}
+
+.Footer-icon {
+  font-size 32px
+  margin-bottom 5px
+  margin 0 5px 5px 5px
+  display flex // For ie Edage bug fixed
+
+  &--pitch, &--music, &--mic {
+    @extends $Footer-icon-base
+  }
+
+  &--echo {
+    @extends $Footer-icon-base
+    &.is-active, &:active {
+      color #0ff
+      border-color #0ff
+    }
+  }
+}
+
+.Footer-header-context {
+  color #0ff
+}

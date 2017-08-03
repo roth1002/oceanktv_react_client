@@ -1,0 +1,658 @@
+@css {
+  @import 'suitcss-utils-display';
+}
+
+$Centered-flex {
+  display flex
+  justify-content center
+  align-items center
+}
+
+.Modal {
+  background-color rgba(255,255,255, 0.9)
+  color #000
+  position relative
+  text-shadow none
+}
+
+.Modal-overlay {
+  @extend $Centered-flex
+  background-color alpha(#000, 0.8)
+  position fixed 0
+  z-index 3
+}
+
+.Modal-content {
+  &--player {
+    width 50vw
+  }
+
+  &--about {
+    width 360px
+  }
+
+  &--setting {
+    width 630px
+    min-height 410px
+
+    & > .Modal-form {
+      padding-bottom 80px
+      & > .Modal-confirm {
+        position absolute
+        bottom 0
+        right 0
+        padding 0
+        margin 24px 35px
+      }
+    }
+
+    &--addfolder {
+      min-width 330px
+      max-width 630px
+      max-height 465px
+    }
+  }
+
+  &--install {
+    width 660px
+  }
+
+  &--tutorial {
+    width 720px
+    min-height 574px
+  }
+
+  &--tvplayer-not-open-confirm {
+    min-width 330px
+    max-width 630px
+    max-height 465px
+
+    & > .tvplayer-not-open-confirm-content {
+      padding 0 35px 0 70px
+
+      & > .sentences {
+        margin 10px 0
+      }
+
+      & .nerver-tip-checkbox {
+        margin-right 5px
+      }
+    }
+  }
+
+  &--treeview {
+    width 300px
+    height 300px
+    overflow auto
+    padding 20px
+    border-bottom 1px solid rgb(176, 176, 176)
+    color rgb(0, 0, 0)
+  }
+}
+
+.Modal-title {
+  font-size 18px
+  font-weight normal
+  line-height 1
+  padding 20px 24px
+  border-bottom 1px solid #b0b0b0
+  margin 0
+  cursor move
+
+  &--about {
+    padding 10px 18px
+  }
+
+  &--tutorial {
+    line-height 58px
+    padding 0 35px
+  }
+
+  &--favor-edit {
+    padding 24px 24px 0 24px
+    border 0
+
+    & > img {
+      vertical-align middle
+    }
+
+    & > span {
+      padding 0 10px
+    }
+  }
+
+  &--install {
+    border none
+  }
+
+  &--edit-help {
+    font-size 16px
+    color #939393
+    position absolute
+    top 0
+    right 35px
+    padding 12px 10px 20px
+
+    &:hover {
+      cursor pointer
+      color #bababa
+    }
+
+    &:active {
+      cursor pointer
+      color #6d6d6d
+    }
+
+    &:disabled {
+      color: transparent
+    }
+  }
+
+  &--tvplayer-not-open-confirm {
+    padding 24px 24px 0 24px
+    border 0
+
+    & > .Modal-title-icon {
+      vertical-align middle
+    }
+
+    & > span {
+      padding 0 10px
+    }
+  }
+
+  .ic {
+    padding-right 10px
+  }
+
+  &--term-of-service {
+    border 0
+    padding 24px 35px
+  }
+}
+
+.Modal-tabs {
+  padding 0 20px
+  border-bottom 1px solid #b0b0b0
+}
+
+.Modal-tab {
+  display inline-block
+  color #2f2f2f
+  padding 0 25px
+  border-bottom 2px solid transparent
+  cursor pointer
+
+  &:hover {
+    font-weight 700
+  }
+
+  &.is-active {
+    color #000
+    font-weight 700
+    border-bottom 2px solid #2f2f2f
+  }
+}
+
+.Modal-body {
+  display flex
+  flex-direction column
+  align-items center
+  padding 20px
+
+  &--about {
+    padding-right 18px
+    padding-left 18px
+    padding-bottom 50px
+
+    & > * {
+      margin 5px 0
+    }
+  }
+
+  &--tutorial {
+    padding 20px 35px 24px 35px
+    height 507px
+    display flex
+    flex-direction column
+    justify-content space-between
+
+    &-notice {
+      margin 10px 0
+      color #195a87
+    }
+  }
+
+  &--term-of-service {
+    padding 24px 35px
+    font-weight 500
+    margin-bottom 10px
+  }
+
+  &--install {
+    & > p {
+      max-width 100%
+      margin 0
+      padding 10px
+    }
+  }
+}
+
+.QRcodes {
+  display flex
+  justify-content center
+  padding 25px 150px
+  & > div {
+    flex 1
+    text-align center
+    & > img, & > a {
+      display block
+      // width 100%
+      text-align center
+    }
+    & > .QRcode-tip {
+      margin-top 1em
+      color #000
+      word-break break-word
+    }
+
+    & > div {
+      padding 10px 0
+      text-align center
+      font-weight 700
+    }
+  }
+
+  &--comming-soon {
+    height 124px
+    text-align center
+    vertical-align center
+    font-size 1.4em
+    color #717171
+    margin-top 100px
+  }
+}
+
+.Modal-version {
+  font-size 14px
+}
+
+.Modal-footer {
+  display flex
+  align-items center
+  padding 20px
+
+  & > * {
+    margin 0 10px
+  }
+
+  &--about {
+    display flex
+    justify-content space-between
+    align-items flex-end
+    padding 24px 18px
+    & > * {
+      margin 0
+    }
+  }
+}
+
+.Modal-text {
+  & > * {
+    display block
+  }
+}
+
+.Modal-link {
+  color #646464
+  font-size 12px
+
+  .ic {
+    padding 0px 10px
+  }
+}
+
+.Modal-copyright {
+  color #b1b1b1
+  font-size 10px
+  padding 3px 10px 0
+}
+
+.Modal-divider {
+  background-color #dfdfdf
+  width 50%
+  height 1px
+}
+
+.Modal-form {
+  padding 0 35px 24px
+
+  &--favor-edit {
+    padding 0 24px 24px
+  }
+}
+
+.Modal-audio {
+  // position relative
+  & > h5 {
+    font-size 15px
+    font-weight normal
+    margin-bottom 15px
+    & > .ic {
+      margin-right 10px
+    }
+  }
+  & > label {
+    display block
+    font-size 13px
+    padding 5px 10px
+
+    & > input {
+      margin-right 20px
+    }
+    & > .ic {
+      font-size 16px
+    }
+  }
+  &-item {
+    margin-left 10px
+    font-size 16px
+
+    &.is-not-connected {
+      color red
+    }
+  }
+}
+
+.Modal-audio-unsupport {
+  color #c1272d
+  margin 0 5%
+}
+
+.Modal-audio-refresh {
+  color #2f2f2f
+  background-color #fff
+  padding 5px 24px
+  border 1px solid #000
+  margin 0 0 0 8px
+  position absolute
+  top 100px
+  right 35px
+  border-radius 8px
+  cursor pointer
+
+  &:hover {
+    color #707070
+  }
+}
+
+.Modal-blocking {
+  @extend $Centered-flex
+  flex-direction column
+  background-color alpha(#000, 0.75)
+  color #fff
+  position absolute 0
+}
+
+.Modal-themes {
+  & > h5 {
+    font-size 15px
+    font-weight normal
+    margin-bottom 15px
+    & > .ic {
+      margin-right 10px
+    }
+  }
+  & > label {
+    font-size 13px
+    margin 0 10px
+  }
+  &-context {
+    margin-bottom 10px
+  }
+}
+
+.Modal-description {
+  color #414141
+  width 650px
+  margin-top 0
+  & > span {
+    display block
+  }
+
+  & > ol {
+    padding-left 20px
+    margin-top 0
+  }
+
+  &--stepStart {
+    color #2f2f2f
+    text-align center
+    padding 25px 0 15px
+    margin-bottom 0
+  }
+
+  &--stepOrderSongs {
+    height 76px
+    margin-bottom 15px
+  }
+
+  &--stepEditNames {
+    margin-bottom 15px
+  }
+
+  &--stepUseYoutube {
+    // margin-bottom 15px
+    padding: 0 4px;
+  }
+
+  &--term-of-service {
+    margin-bottom 10px
+    width 550px
+    & > span {
+      padding 0 0 20px 0
+    }
+  }
+}
+
+.Modal-img {
+
+  &--w100 {
+    width 100%
+  }
+
+  &--stepStart {
+    padding-top 75px
+  }
+}
+
+.Modal-confirm {
+  text-align right
+  width 100%
+  padding-top 30px
+  & > button {
+    background-color transparent
+    padding 5px 20px
+    border 1px solid #000
+    margin 0 0 0 8px
+    outline none
+
+    &:hover {
+      color #707070
+      border-color #707070
+    }
+
+    &:active {
+      color #2f2f2f
+      border-color #2f2f2f
+    }
+
+    &:disabled {
+      color #aeaeae
+      border-color #aeaeae
+    }
+  }
+
+  &--tutorial {
+    text-align center
+  }
+
+  &--favor-edit {
+    padding 0
+  }
+}
+
+.Modal-progress {
+  background-color #d9d9d9
+  width 100%
+  height 8px
+  position absolute
+  left 0
+  bottom 0
+  right 0
+
+  & > div {
+    background-color #369eff
+    height 100%
+  }
+}
+
+.Modal-input {
+  display block
+  line-height 1.2
+  width 350px
+  height 34px
+  margin 20px 0 20px 0
+  color #2f2f2f
+  padding-left 8px
+  &.is-invalid {
+    border 1px solid #c1272d
+  }
+
+  &-tip {
+    color #c1272d
+    position absolute
+    top 110px
+    left 24px
+    font-size 12px
+    display none
+
+    &.is-visible {
+      display inline-block
+    }
+  }
+}
+
+.Modal-close {
+  background-color transparent
+  color #939393
+  font-size 14px
+  border 0
+  outline none
+  position absolute
+  top 10px
+  right 10px
+  z-index 1
+
+  &:hover {
+    color #bababa
+  }
+
+  &:active {
+    color #6d6d6d
+  }
+
+  &:disabled {
+    color: transparent
+  }
+}
+
+.Modal-delete--context {
+  display block
+  line-height 1.2
+  width 350px
+  height 34px
+  margin 20px 0 20px 0
+  color #2f2f2f
+  padding-left 8px
+  text-align center
+}
+
+.Modal-folder--header-tip,
+.Modal-mic--header-tip {
+  color #195a87
+  margin 0
+}
+
+.Modal-folder--header-btn {
+  border-radius 8px
+  padding 2px 24px
+  border 1px solid #2f2f2f
+  background-color white
+  color #2f2f2f
+  margin 4px 10px
+
+  &:hover {
+    color #707070
+  }
+
+  &:disabled {
+    color #aeaeae
+    border 1px solid #aeaeae
+  }
+}
+
+.Modal-list-filter {
+  height 31px
+  padding 4px
+  border 1px solid #b0b0b0
+}
+
+.Modal-input-header {
+  margin 8px 15px
+
+  &.is-hidden {
+    visibility hidden
+  }
+}
+
+.Modal-input-item {
+  margin 0 15px 0 4px
+
+  &.is-hidden {
+    visibility hidden
+  }
+}
+
+.Modal-list-favor {
+  max-width: 380px
+}
+
+.Modal-mic {
+  margin-top 20px
+  display inline-block
+
+  &--warn-img {
+    width 25px
+    height 25px
+    margin 15px 5px 0 0
+  }
+
+  &--column {
+    display flex
+  }
+
+  &--item {
+    padding 10px
+    flex 1
+
+    &--warn {
+      color #ed821c
+    }
+  }
+
+  &--select {
+    flex 1
+  }
+}
+

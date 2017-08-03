@@ -1,0 +1,63 @@
+@css {
+  @import 'suitcss-utils-display';
+}
+
+.Cart {
+
+}
+
+.Cart-header {
+
+}
+.Cart-actions {
+  height 20px
+  padding 5px 0
+  & > button {
+    background-color transparent
+    height 100%
+    border none
+    outline none
+  }
+}
+.Cart-confirm {
+
+}
+.Cart-list {
+  width 500px
+  height 300px
+  border 1px solid #777
+  overflow-y auto
+}
+.Cart-item {
+  display flex
+  align-items center
+  color #000
+  height 50px
+
+  &:nth-child(odd) {
+    background-color #f4f4f4
+  }
+
+  & > * {
+    display inline-block
+    padding 0 5px
+  }
+
+  & > img {
+    width 10%
+  }
+
+  & > span {
+    flex 1
+    white-space nowrap
+    text-overflow ellipsis
+    overflow hidden
+  }
+}
+
+.Cart-remove {
+  background-color transparent
+  height 100%
+  border none
+  outline none
+}

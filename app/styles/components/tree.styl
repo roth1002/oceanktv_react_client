@@ -1,0 +1,97 @@
+.tree {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 300px;
+  overflow-x: hidden;
+  overflow-y: auto;
+  background-color: #21252B;
+}
+
+.m-node {
+  &.placeholder {
+    border: 1px dashed #1385e5;
+  }
+
+  .inner {
+    color: #9DA5B4;
+    font-size: 12px;
+    // font-family: Menlo;
+  }
+
+  .node {
+    display: inline-block;
+    width: 100%;
+    padding: 4px 5px;
+
+    &.is-active {
+      background-color: #31363F;
+    }
+  }
+}
+
+// *, *:before, *:after {
+//   -webkit-box-sizing: border-box;
+//   -moz-box-sizing: border-box;
+//   box-sizing: border-box;
+// }
+
+.inspector {
+  margin-left: 400px;
+
+  pre {
+    font-family: Menlo;
+    font-size: 13px;
+  }
+}
+
+$f-no-select {
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.m-tree {
+  position: relative;
+  overflow: hidden;
+  @extends $f-no-select;
+}
+
+.m-draggable {
+  position: absolute;
+  opacity: 0.8;
+  @extends $f-no-select;
+}
+
+.m-node {
+  &.placeholder > * {
+    visibility: hidden;
+  }
+
+  &.placeholder {
+    border: 1px dashed #ccc;
+  }
+
+  .inner {
+    position: relative;
+    cursor: pointer;
+    padding-left: 10px;
+  }
+
+  .collapse {
+    position: absolute;
+    left: 0;
+    cursor: pointer;
+  }
+
+  .caret-right:before {
+    content: '\25B8';
+  }
+
+  .caret-down:before {
+    content: '\25BE';
+  }
+}

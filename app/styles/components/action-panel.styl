@@ -1,0 +1,108 @@
+@css {
+  @import 'suitcss-utils-display';
+}
+
+$ActionPanel-normal {
+  display flex
+  justify-content center
+  // background-color alpha(#1d697f, 0.9)
+  background-color rgba(0,22,43, 0.7)
+  color #fff
+  position absolute
+  top 0
+  transition-duration 0.5s
+  opacity 0
+  visibility hidden
+
+  &.is-show {
+    visibility visible
+    opacity 1
+  }
+}
+
+$ActionPanel-multi-normal {
+  position absolute
+  & > .ActionPanel,
+  & > .ActionPanel-inmulti {
+    position relative
+    border-radius 8px
+    box-shadow 2px 2px 4px rgba(0,0,0,.5)
+    border 1px solid rgba(255,255,255,.5)
+    overflow hidden
+    & > .ActionPanel-btn {
+      width 54px
+      height 54px
+    }
+  }
+}
+
+.ActionPanel {
+  @extends $ActionPanel-normal
+  left 30%
+
+  &--home {
+    right 0
+    left auto
+  }
+}
+
+.ActionPanel-inmulti {
+  @extends $ActionPanel-normal
+  left 0
+}
+
+.ActionPanel-btn {
+  background-color transparent
+  font-size 16px
+  width 50px
+  height 50px
+  border none
+  outline none
+  transition-duration 0.3s
+  padding 0
+
+  &:before {
+    display block
+    font-size 1.5em
+    // padding-bottom 10px
+  }
+
+  &:active {
+    background-color alpha(#000, 0.3)
+  }
+  &:hover {
+    // background-color alpha(#000, 0.2)
+    background-color rgba(0,0,0,0.4)
+  }
+
+  // &:hover:after{
+  //   color: #2f2f2f;
+  //   content: attr(title);
+  //   font-size 12px;
+  //   top 15px;
+  //   position absolute
+  //   padding 11px 20px
+  //   margin-left 10px
+  //   background-image linear-gradient(to bottom, #fefefe, #e5e4f2)
+  //   z-index 99
+  // }
+
+  & > span {
+    font-family $font-family
+  }
+}
+
+.ActionPanel-multi {
+  @extends $ActionPanel-multi-normal
+  right calc(47%)
+}
+
+.ActionPanel-multi-history {
+  @extends $ActionPanel-multi-normal
+  right calc(57%)
+}
+
+.ActionPanel-multi-songbook {
+  @extends $ActionPanel-multi-normal
+  right calc(60%)
+}

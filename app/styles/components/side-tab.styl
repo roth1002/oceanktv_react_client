@@ -1,0 +1,136 @@
+@css {
+  @import 'suitcss-utils-display';
+}
+
+$SideTab-bgImg = linear-gradient(to bottom, alpha(#2d4269, 0), alpha(#142e51, 0.4), #29567a);
+
+$SideTab-share {
+  position absolute
+  top 50%
+  right 5px
+  transform translateY(-50%)
+}
+
+.SideTab {
+  background-image $SideTab-bgImg
+  font-size 16px
+  width 250px
+  overflow-x hidden
+  overflow-y auto
+
+  z-inde 1 // For windows chrome bug fixed
+}
+
+.SideTab-link {
+  display block
+  width 100%
+  padding 8px 0 4px 20px
+  position relative
+  box-sizing border-box
+  overflow hidden
+  white-space nowrap
+  text-overflow ellipsis
+  transition-duration 0.5s
+  outline none
+  display inline-block
+
+  &:hover {
+    // background-color #1a748e
+    background-color rgba(0,0,0, 0.5)
+  }
+
+  &:active {
+    background-color rgba(0,0,0, 0.8)
+  }
+
+  &:hover .SideTab-edit, &:hover .SideTab-delete {
+    display block
+  }
+
+  &:hover .SideTab-total {
+    display none
+  }
+
+  &.is-current {
+    color #0ff
+  }
+
+  &--listview-edit {
+    margin-left 10px
+    font-size 20px
+    vertical-align super
+  }
+
+  &--favorite,
+  &--songbook {
+    position relative
+    padding-right 40px
+  }
+
+  &--add-favor {
+    padding 20px
+  }
+}
+
+.SideTab-edit {
+  @extend $SideTab-share
+  display none
+  margin-right 25px
+}
+
+.SideTab-delete {
+  @extend $SideTab-share
+  display none
+  margin-right 5px
+}
+
+.SideTab-total,
+.SideTab-total-normal {
+  @extend $SideTab-share
+  display block
+}
+
+.SideTab-title {
+  display flex
+  justify-content space-between
+  align-items center
+  font-weight bold
+  padding 8px 0 8px 10px
+  .ic:before {
+    padding-right 10px
+  }
+}
+
+.SideTab-menu {
+  color alpha(#fff, 0.4)
+  font-size 8px
+  padding 10px 0
+  cursor pointer
+
+  &:hover {
+    color #fff
+  }
+}
+
+.SideTab-block {
+  display block
+  // margin 10px 0
+  color white
+}
+
+.SideTab-list {
+  font-size 16px
+
+  & > .SideTab-link {
+    padding-left 54px
+  }
+}
+
+.SideTab--add-favor {
+  border 1px solid #fff
+  padding 0.1em
+  margin-right 10px
+  border-radius: 0.8em
+  color #fff
+  font-weight bold
+}

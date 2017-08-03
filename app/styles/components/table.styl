@@ -1,0 +1,49 @@
+@css {
+  @import 'suitcss-utils-display';
+}
+
+$Table-border = 1px solid #c8c8c8;
+
+$Table-item {
+  display flex
+  align-items center
+  height 28px
+  padding 0 15px
+
+  & > * {
+    flex 1
+    display inline-block
+  }
+}
+
+.Table {
+  border-left $Table-border
+  border-right $Table-border
+  border-bottom $Table-border
+}
+
+.Table-head {
+  @extend $Table-item
+  background-color #ebebeb
+  border-bottom $Table-border
+
+  & > .Table-divider {
+    background-color #c8c8c8
+  }
+}
+
+.Table-divider {
+  flex 0 1 auto
+  width 1px
+  height 18px
+  margin-right 15px
+}
+
+.Table-item {
+  @extend $Table-item
+  background-color #fff
+
+  &:nth-child(even) {
+    background-color #f5f8ff
+  }
+}

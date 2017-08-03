@@ -1,0 +1,90 @@
+@css {
+  @import 'suitcss-utils-display';
+}
+
+.MoreSettingPanel {
+	position fixed
+	display none
+	min-width 208px
+	float right
+	top 52px
+	right 92px
+	background #f8f5fa
+	border 1px solid #b0b0b0
+	z-index 9999
+	color #000000
+	text-shadow none
+	&.is-visible {
+		display block
+	}
+}
+
+.MoreSettingContent{
+	margin 0
+	padding 0
+	list-style-type none
+
+	.disable{
+		color #999
+		line-height 40px
+		padding-left 40px
+	}
+	&-btn {
+		cursor pointer
+		color #2f2f2f
+		text-decoration none
+		line-height 40px
+		padding 0 22px
+
+		&:hover {
+			display block
+			background #defefd
+		}
+
+		&--lang {
+			padding 0 22px 0 52px
+		}
+	}
+	.hr{
+		background #999
+		height 1px
+		margin -1px 0
+		width 150px
+		padding-left 0
+	}
+	&-next-icon {
+		float right
+		margin 14px 0
+	}
+
+	&-split-line {
+		background #999
+		height 1px
+		width 80%
+		margin-left -22px
+  }
+  &-checked-icon {
+  	position absolute
+    margin 10px -30px
+    &:hover{
+			display block
+			background #defefd
+
+		}
+  }
+}
+.menuLang{
+	display none
+	right 301px
+	width 208px
+	top 85px
+	position fixed
+	background #f8f5fa
+	float right
+	border 1px solid #b0b0b0
+	z-index 9999
+	color #000000
+	&.is-visible {
+		display block
+	}
+}

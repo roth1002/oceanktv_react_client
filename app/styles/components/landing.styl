@@ -1,0 +1,112 @@
+$Images-url = '../assets/images/'
+
+$Set-background-image(fileName)
+  background-image url($Images-url + fileName)
+
+$Set-linear-gradient-bg-image(fileName)
+  background-image linear-gradient(to bottom, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url($Images-url + fileName)
+
+
+.Landing {
+  background-position center
+  background-size cover
+  height 100vh
+  position relative
+  overflow hidden
+  &.bg-1 {
+    $Set-linear-gradient-bg-image('landing_page_bg1.png')
+  }
+
+  &.bg-2 {
+    $Set-linear-gradient-bg-image('landing_page_bg2.png')
+  }
+}
+
+.Landing-main {
+  font-size 15pt
+  text-align center
+  margin 20px 0
+}
+
+.Landing-intro {
+  font-size 1.2em
+  height 100px
+  max-width 70%
+  margin 30px auto
+}
+
+.Landing-btns {
+  display flex
+  justify-content center
+  align-items center
+}
+
+.ImgBtn {
+  font-size 18pt
+  margin 0 10px
+  cursor pointer
+  display inline-block
+
+  &--intro {
+    & > .ImgBtn-img {
+      $Set-background-image('introduction_normal.png')
+    }
+
+    &:hover {
+      & > .ImgBtn-img {
+        $Set-background-image('introduction_hover.png')
+      }
+    }
+  }
+
+  &--market {
+    & > .ImgBtn-img {
+      $Set-background-image('market_normal.png')
+    }
+
+    &:hover {
+      & > .ImgBtn-img {
+        $Set-background-image('market_hover.png')
+      }
+    }
+  }
+
+  &--enter {
+    & > .ImgBtn-img {
+      $Set-background-image('enter_normal.png')
+    }
+
+    &:hover {
+      & > .ImgBtn-img {
+        $Set-background-image('enter_hover.png')
+      }
+    }
+  }
+
+  &--help {
+    & > .ImgBtn-img {
+      $Set-background-image('help_normal.png')
+    }
+
+    &:hover {
+      & > .ImgBtn-img {
+        $Set-background-image('help_hover.png')
+      }
+    }
+  }
+}
+
+.ImgBtn-img {
+  display block
+  background-position center
+  background-size cover
+  background-repeat no-repeat
+  width 250px
+  height 250px
+}
+
+.ImgBtn-text {
+  display block
+  text-align center
+  margin 15px 0
+}

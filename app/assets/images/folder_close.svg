@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="14" height="12" viewBox="0 0 14 12">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #666;
+        fill-rule: evenodd;
+      }
+    </style>
+  </defs>
+  <path id="folder_close.svg_folder_close.png" data-name="folder_close.svg, folder_close.png" class="cls-1" d="M519.527,290.792l0.045,0.006a0.613,0.613,0,0,1-.042.194A0.312,0.312,0,0,1,519.527,290.792ZM533,296H519V284h5l3,2h6v10h-1v-9h-5l-3-2h-4v10h13v1Z" transform="translate(-519 -284)"/>
+</svg>

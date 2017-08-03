@@ -1,0 +1,136 @@
+@css {
+  @import 'suitcss-utils-display';
+}
+
+.Empty {
+  color alpha(#fff, 1)
+  position absolute 0
+  width 180px
+  height 150px
+  margin auto
+  text-shadow 1px 1px 8px rgba(0,0,0,0.6)
+  & > * {
+    display block
+    text-align center
+    margin 0 auto 30px
+  }
+
+  &--search {
+    color alpha(#000, 0.35)
+  }
+}
+
+.Noempty {
+  display none
+}
+
+.Spinner {
+  background-color alpha(#000, 50%)
+  width 50px
+  border-radius 10px
+  margin auto
+  /**
+   * Shorthand for below
+   * position: absolute;
+   * top: 0; right: 0; bottom: 0; left: 0;
+   */
+  position absolute 0
+
+  &--audiosetting {
+    width 150px
+    top 300px
+  }
+}
+
+.Spinner-hidden {
+  display none
+}
+
+.List {
+  color #fff
+  overflow-y auto
+  overflow-y overlay
+  will-change transform
+
+  & > h2 {
+    text-align center
+  }
+
+  &--stroke {
+    background-color transparent
+  }
+
+  &--favorites {
+    height auto
+    width 472px
+    box-sizing border-box
+    overflow hidden
+  }
+
+  &--artist {
+    display flex
+    height calc(100% + 40px)
+  }
+
+  &--modal {
+    background-color transparent
+    min-width 280px
+    max-height 320px
+    height auto
+    border 1px solid #b0b0b0
+    margin-top 20px
+
+    &--folder {
+      margin 0
+    }
+
+  }
+
+  &--search-artists {
+    background-color transparent
+    height calc(100% - 76px)
+  }
+
+  &--search-songs {
+    background-color transparent
+    height calc(100% - 44px)
+  }
+
+  &--song, &--queue, &--history, &--favorite {
+
+  }
+
+  &.is-empty {
+    min-height 100%
+  }
+}
+
+.List-head {
+  display flex
+  background-color transparent
+  color #8f8f8f
+  padding 10px 30px
+
+  & > * {
+    flex 1
+    padding 0 10px
+  }
+
+  & > .ic {
+    flex 0
+    font-size 1.5em
+    padding-right 24px
+  }
+
+  &-artists {
+    margin-left 57px
+  }
+}
+
+.List-col {
+  display inline-block
+  width calc(100% / 3)
+  & > * {
+    display block
+  }
+}

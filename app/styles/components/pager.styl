@@ -1,0 +1,59 @@
+
+$Pager-basic {
+  border 1px solid #fff
+  padding 0.2em 0.5em
+  margin-left 0.6em
+
+  &.ic_topbar_top {
+    border-radius 0.4em 0 0 0.4em
+  }
+
+  &.ic_topbar_bottom {
+    border-radius 0 0.4em 0.4em 0
+  }
+}
+
+.Pager {
+  @extends $Pager-basic
+  cursor pointer
+
+  &:hover {
+    color: #00ffff;
+    border-color: #00ffff;
+  }
+}
+
+.Pager-disable {
+  @extends $Pager-basic
+  opacity 0.5
+}
+
+.Page-display-item {
+  // padding-left 8px
+}
+
+.Page-display-prefix {
+  // padding-right 8px
+}
+
+.Pager-select {
+  display none
+  width 70px
+  font-size 14px
+
+  .Select-input,
+  .Select-control  {
+    height 19px
+  }
+  .Select-placeholder {
+    line-height 19px
+  }
+}
+
+.Pager-title-context {
+  text-overflow ellipsis
+  white-space nowrap
+  max-width 60%
+  display inline-block
+  overflow hidden
+}
