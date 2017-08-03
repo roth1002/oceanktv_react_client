@@ -1,6 +1,8 @@
 Karaoke Station with QTS
 =====
 ### Dependencies
+
+[![Greenkeeper badge](https://badges.greenkeeper.io/roth1002/oceanktv_react_client.svg)](https://greenkeeper.io/)
 [package.json](/package.json)
 
 - [x] [Webpack](https://webpack.github.io)
